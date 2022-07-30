@@ -1,0 +1,174 @@
+/*******************************************************************************
+ * ROFI Color theme
+ * Theme designed to show off moving, packing of widgets, icons and more.
+ * User: DaveDavenport
+ * Copyright: DaveDavenport
+ ********************************************************************************/
+* {
+    foreground:                  #f8f8f2; 
+    background:                  #282a36;
+    bordercolor:                 #50fa7b;
+    selected-normal-background:  #6272a4; 
+    separatorcolor:              #6272a4; 
+    background-color:            transparent;
+}
+window {
+    border-color:     #44475a;
+    background-color: @background; 
+    border:           2px;
+    padding:          0px;
+    border-radius:    10px;
+    padding:          0.5em;
+    spacing:          0px;
+
+    anchor:         north;
+    location:       center;
+    y-offset:       -15.5em;
+
+
+    children: [ inputbar, message, wrapper-mode-switcher, listview ];
+}
+
+
+
+wrapper-mode-switcher {
+    orientation: horizontal;
+
+    expand:     false;
+    spacing:    0;
+    children: [ icon-ms-ic1, mode-switcher, icon-ms-ic2 ];
+}
+icon-ms-ic1 {
+    filename: "go-previous";
+}
+icon-ms-ic2 {
+    filename: "go-next";
+}
+icon-ms-ic1,icon-ms-ic2 {
+    size: 16;
+    vertical-align: 0.8;
+    expand:        false;
+    border:       0px 0px 2px ;
+    border-color: @separatorcolor;
+}
+
+mode-switcher {
+    border:  0px;
+    spacing: 0px;
+    expand: true;
+}
+
+button {
+    padding:      2px;
+    border:       0px 0px 2px ;
+    border-color: @separatorcolor;
+}
+button selected.normal {
+    text-color: white;
+    background-color: black/50%;
+
+    border:       2px 2px 0px ;
+    border-color: @separatorcolor;
+    border-radius:    10px 10px 0 0;
+}
+
+
+sidebar {
+    expand: false;
+}
+
+message {
+    text-color:       @foreground;
+    background-color: lightgrey / 50%;
+    border-color:     grey;
+    border:           2px;
+    border-radius:    5px;
+    padding:          4px;
+    margin:           0px 0px 0.5em;
+    expand:           false;
+}
+
+listview {
+    spacing:      2px ;
+    scrollbar:    false;
+    padding:      0.5em;
+    background-color: @background; 
+
+    expand:       true;
+    border:       0px 2px 2px ;
+    border-color: @separatorcolor;
+    border-radius: 0px 0px 10px 10px;
+}
+element {
+    border:  1;
+    border-color: transparent;
+    padding: 4px ;
+}
+element.normal.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+element.selected.normal {
+    border:  1;
+    border-color: grey/80%;
+    background-color: @selected-normal-background;
+    text-color:       @foreground;
+}
+element.alternate.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+sidebar {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+}
+inputbar {
+    text-color: @foreground;
+    padding: 0px 0px 0.5em;
+    background-color: @background;
+}
+case-indicator {
+    text-color: @foreground;
+}
+
+wrapper {
+    orientation: horizontal;
+    text-color:       @foreground;
+    background-color: @background; 
+    border-color:     @separatorcolor;
+
+    border: 2px;
+    border-radius: 5px;
+    padding: 4px;
+    children:   [ icon-k, entry ];
+    spacing:  0.5em;
+}
+icon-k {
+    expand: false;
+    filename: "input-keyboard";
+    size: 24;
+    vertical-align: 0.5;
+
+}
+entry {
+    vertical-align: 0.5;
+}
+inputbar {
+    children:   [ wrapper ];
+}
+
+error-message {
+    background-color: darkred/10%;
+    border-color: darkred;
+    border-radius: 10px;
+    border: 2px;
+    padding: 0.5em;
+
+}
+
